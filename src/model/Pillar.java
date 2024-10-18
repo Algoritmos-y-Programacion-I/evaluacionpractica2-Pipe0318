@@ -21,7 +21,13 @@ public class Pillar {
      *         contrario
      */
     public boolean registerProject(Project newProject) {
-
+        
+        for(int l = 0; l < projects.length; l++){
+            if (projects[l] == null){
+            projects[l]= newProject;
+            return true;
+            }
+        }
         return false;
     }
 
@@ -35,6 +41,23 @@ public class Pillar {
 
         String list = "";
 
+        boolean validar = false; 
+         if (projects == null){
+             list = "No hay projectos registrados";
+         } else {
+        for(int j=0; j<projects.length; j++){
+             if(projects[j]!=null){
+                 list+=j+1+"."+projects[j].toString()+"\n";
+                 validar=true;
+             } 
+ 
+             
+         }
+         if (validar==false){
+             list = "No hay projectos registrados";
+        
+         }
+        }
         return list;
     }
 

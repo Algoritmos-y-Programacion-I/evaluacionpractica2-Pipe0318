@@ -16,4 +16,11 @@ public class Project {
 
     }
 
+    @Override
+    public String toString() {
+    
+    String mensaje = "\nId: "+id+"\nName: "+name+"\nDescription: "+description+"\nStatus: "+status;
+    return  mensaje;
+    }
+
 }
